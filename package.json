@@ -4,8 +4,7 @@
   "description": "JavaScript Stack from Scratch - Step-by-step tutorial to build a modern JavaScript stack",
   "scripts": {
     "start": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tutorial-test": "gulp main"
+    "test": "jest --verbose"
   },
   "eslintConfig": {
     "extends": "airbnb",
