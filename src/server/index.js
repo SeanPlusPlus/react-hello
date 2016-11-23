@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
-import Dog from '../shared/dog';
+import Nav from '../shared/nav';
 
-const toby = new Dog('Toby');
+const n = new Nav('Toby');
 
-console.log(toby.bark());
+console.log(n.main());
