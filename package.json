@@ -9,7 +9,15 @@
   "eslintConfig": {
     "extends": "airbnb",
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
     },
     "plugins": [
       "import"
@@ -32,6 +40,7 @@
     "gulp-watch": "^4.3.11",
     "jest": "^17.0.3",
     "react": "^15.3.2",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "^15.3.2",
     "react-test-renderer": "^15.4.1"
   },
