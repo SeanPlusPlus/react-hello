@@ -1,6 +1,5 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 
-
 import React from 'react';
 
 const STATUS = {
