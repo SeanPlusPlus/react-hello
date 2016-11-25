@@ -11,7 +11,7 @@ class Download extends React.Component {
 
   render() {
     return (
-      <section id="download" className="download bg-primary text-center">
+      <section id="download" name="download" className="download bg-primary text-center">
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2">

@@ -1,4 +1,6 @@
 import React from 'react';
+import Scroll from 'react-scroll';
+import $ from 'jquery';
 
 class Nav extends React.Component {
   constructor() {
@@ -6,7 +8,13 @@ class Nav extends React.Component {
     this.state = {
       title: 'SeanPlusPlus',
       menu: ['download', 'features', 'contact'],
+      scroll: Scroll.animateScroll,
     };
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.state.scroll.scrollTo($(e.target.hash).offset().top);
   }
 
   render() {
@@ -27,7 +35,7 @@ class Nav extends React.Component {
             <ul className="nav navbar-nav navbar-right">
               {this.state.menu.map(m =>
                 <li key={m}>
-                  <a className="page-scroll" href={`#${m}`}>{m}</a>
+                  <a className="page-scroll" onClick={e => this.handleClick(e)} href={`#${m}`}>{m}</a>
                 </li>
               )}
             </ul>

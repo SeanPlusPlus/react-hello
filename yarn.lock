@@ -2991,6 +2991,16 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
+jquery.easing@~1.3:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.3.2.tgz#74aac659302ae04feb02fd1c0df8e355eebc68d7"
+  dependencies:
+    jquery ">= 1.3.0"
+
+"jquery@>= 1.3.0", jquery@~1.12.4:
+  version "1.12.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.12.4.tgz#01e1dfba290fe73deba77ceeacb0f9ba2fec9e0c"
+
 js-tokens@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-1.0.3.tgz#14e56eb68c8f1a92c43d59f5014ec29dc20f2ae1"
@@ -4039,6 +4049,12 @@ react-prop-types@^0.4.0:
   resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.4.0.tgz#f99b0bfb4006929c9af2051e7c1414a5c75b93d0"
   dependencies:
     warning "^3.0.0"
+
+react-scroll@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.4.4.tgz#5da0358539f2d5e4945a8ab526ec3d10244b891f"
+  dependencies:
+    object-assign "^4.0.1"
 
 react-test-renderer@^15.4.1:
   version "15.4.1"
