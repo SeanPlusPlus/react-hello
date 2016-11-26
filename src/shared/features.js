@@ -80,7 +80,7 @@ class Features extends React.Component {
           </div>
         </div>
       </section>
-  );
+    );
   }
 }
 

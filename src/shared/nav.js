@@ -9,7 +9,25 @@ class Nav extends React.Component {
       title: 'SeanPlusPlus',
       menu: ['download', 'features', 'contact'],
       scroll: Scroll.animateScroll,
+      scrollspy: Scroll.scrollspy,
     };
+  }
+
+  componentDidMount() {
+    const navbar = $('.navbar');
+    function scrollNav() {
+      if ($(window).scrollTop() <= 40) {
+        navbar.addClass('affix-top').removeClass('affix');
+      } else {
+        navbar.addClass('affix').removeClass('affix-top');
+      }
+    }
+    $(window).scroll(scrollNav);
+
+    // $('body').scrollspy({
+    //   target: '.navbar-fixed-top',
+    //   offset: 100,
+    // });
   }
 
   handleClick(e) {
@@ -29,13 +47,21 @@ class Nav extends React.Component {
             >
               <span className="sr-only">Toggle navigation</span> Menu <i className="fa fa-bars" />
             </button>
-            <a className="navbar-brand page-scroll" href="#page-top">{this.state.title}</a>
+            <a
+              onClick={e => this.handleClick(e)}
+              className="navbar-brand page-scroll"
+              href="#page-top"
+            >
+              {this.state.title}
+            </a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
               {this.state.menu.map(m =>
                 <li key={m}>
-                  <a className="page-scroll" onClick={e => this.handleClick(e)} href={`#${m}`}>{m}</a>
+                  <a onClick={e => this.handleClick(e)} href={`#${m}`}>
+                    {m}
+                  </a>
                 </li>
               )}
             </ul>

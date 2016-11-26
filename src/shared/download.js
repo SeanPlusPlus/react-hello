@@ -4,14 +4,18 @@ class Download extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: 'SeanPlusPlus',
+      title: 'download',
       menu: ['download', 'features', 'contact'],
     };
   }
 
   render() {
     return (
-      <section id="download" name="download" className="download bg-primary text-center">
+      <section
+        id="download"
+        ref={this.state.title}
+        className="download bg-primary text-center"
+      >
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2">
