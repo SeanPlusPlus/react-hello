@@ -1,12 +1,27 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Features extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: 'SeanPlusPlus',
-      menu: ['download', 'features', 'contact'],
+      features: [],
     };
+  }
+
+  componentDidMount() {
+    this.fetch();
+  }
+
+  fetch() {
+    const url = '/data.json';
+    const obj = {
+      url,
+    };
+    const xhr = $.ajax(obj);
+    xhr.done(data =>
+      this.setState({ features: data.features })
+    );
   }
 
   render() {
@@ -28,7 +43,8 @@ class Features extends React.Component {
                 <div className="device-mockup iphone6_plus portrait white">
                   <div className="device">
                     <div className="screen">
-                      <img src="img/demo-screen-1.jpg" className="img-responsive" alt="" /> </div>
+                      <img src="img/demo-screen-1.jpg" className="img-responsive" alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -36,44 +52,17 @@ class Features extends React.Component {
             <div className="col-md-8">
               <div className="container-fluid">
                 <div className="row">
-                  <div className="col-md-6">
-                    <div className="feature-item">
-                      <i className="icon-screen-smartphone text-primary" />
-                      <h3>Device Mockups</h3>
-                      <p className="text-muted">
-                        Ready to use HTML/CSS device mockups, no Photoshop required!
-                      </p>
+                  {this.state.features.map(f =>
+                    <div key={f.title} className="col-md-6">
+                      <div className="feature-item">
+                        <i className={`icon-${f.icon} text-primary`} />
+                        <h3>{f.title}</h3>
+                        <p className="text-muted">
+                          {f.text}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="feature-item">
-                      <i className="icon-camera text-primary" />
-                      <h3>Flexible Use</h3>
-                      <p className="text-muted">
-                        Put an image, video, animation, or anything else in the screen!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="feature-item">
-                      <i className="icon-present text-primary" />
-                      <h3>Free to Use</h3>
-                      <p className="text-muted">
-                        As always, this theme is free to download and use for any purpose!
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="feature-item">
-                      <i className="icon-lock-open text-primary" />
-                      <h3>Open Source</h3>
-                      <p className="text-muted">
-                        Since this theme is MIT licensed, you can use it commercially!
-                      </p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>

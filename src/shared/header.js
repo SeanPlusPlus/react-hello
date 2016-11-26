@@ -22,7 +22,7 @@ class Header extends React.Component {
     };
     const xhr = $.ajax(obj);
     xhr.done(data =>
-      this.setState({ message: data.message })
+      this.setState({ message: data.header.message })
     );
   }
 
