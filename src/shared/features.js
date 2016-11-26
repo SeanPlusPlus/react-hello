@@ -5,7 +5,10 @@ class Features extends React.Component {
   constructor() {
     super();
     this.state = {
-      features: [],
+      features: {
+        top: [],
+        bottom: [],
+      },
     };
   }
 
@@ -51,9 +54,10 @@ class Features extends React.Component {
             </div>
             <div className="col-md-8">
               <div className="container-fluid">
+
                 <div className="row">
-                  {this.state.features.map(f =>
-                    <div key={f.title} className="col-md-6">
+                  {this.state.features.top.map(f =>
+                    <div key={f.icon} className="col-md-6">
                       <div className="feature-item">
                         <i className={`icon-${f.icon} text-primary`} />
                         <h3>{f.title}</h3>
@@ -64,6 +68,21 @@ class Features extends React.Component {
                     </div>
                   )}
                 </div>
+
+                <div className="row">
+                  {this.state.features.bottom.map(f =>
+                    <div key={f.icon} className="col-md-6">
+                      <div className="feature-item">
+                        <i className={`icon-${f.icon} text-primary`} />
+                        <h3>{f.title}</h3>
+                        <p className="text-muted">
+                          {f.text}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
               </div>
             </div>
           </div>
